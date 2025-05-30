@@ -50,7 +50,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Single Toggle Button (top-left) */}
+      {/* Mobile Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
         className="md:hidden fixed top-5 left-5 z-50 bg-gray-900 p-3 rounded-lg text-white shadow-xl hover:bg-primary transition-colors duration-300"
@@ -67,9 +67,8 @@ export default function Sidebar() {
       >
         {/* Sidebar Header */}
         <div>
-          <div className="flex items-center space-x-1 pl-40 py-5 md:pl-0 md:py-0 -mt-1 md:mt-0">
-
-            <div className="flex items-center space-x-4 pl-5 py-0 md:pl-0 md:py-0">
+          <div className="flex items-center justify-start space-x-3 px-6 py-6 md:py-8 border-b border-gray-700 select-none">
+            <div className="flex items-center space-x-4">
               <div className="flex-shrink-0">
                 <Image
                   src="/images/logo.png"
@@ -84,9 +83,6 @@ export default function Sidebar() {
                 SS Innovations
               </h1>
             </div>
-
-            {/* Close button inside sidebar (mobile only) */}
-
           </div>
 
           {/* Navigation Links */}
@@ -105,7 +101,6 @@ export default function Sidebar() {
                     }`}
                   onClick={() => setOpen(false)}
                 >
-
                   {link.name}
                 </Link>
               )
@@ -114,7 +109,7 @@ export default function Sidebar() {
         </div>
 
         {/* Sidebar Footer */}
-        <div className="p-6 border-t border-gray-700 flex flex-col items-start space-y-4">
+        <div className="p-6 md:p-6 border-t border-gray-700 flex flex-col items-start space-y-4">
           {/* Profile Info */}
           <div className="flex items-center space-x-3 w-full">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold select-none text-lg">
@@ -150,7 +145,7 @@ export default function Sidebar() {
         </div>
       </aside>
 
-      {/* Desktop layout spacer */}
+      {/* Desktop Spacer */}
       <div className="hidden md:block md:ml-64" />
     </>
   )
