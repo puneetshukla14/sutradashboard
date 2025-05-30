@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation"
 import { ThemeContext } from "@/context/ThemeContext"
 
 const navLinks = [
-  { name: "Dashboard", href: "/" },
+  { name: "Dashboard", href: "/dashboard" }, // ✅ Redirected here
   { name: "Analytics", href: "/analytics" },
   { name: "Reports", href: "/reports" },
   { name: "Settings", href: "/settings" },
