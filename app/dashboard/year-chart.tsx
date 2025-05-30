@@ -1,41 +1,50 @@
 'use client';
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Legend,
-} from 'recharts';
+import { FaHospital, FaSyringe, FaStethoscope } from 'react-icons/fa';
+import { MdOutlineNumbers } from 'react-icons/md';
 
-const data = [
-  { year: '2022', surgeries: 900 },
-  { year: '2023', surgeries: 1200 },
-  { year: '2024', surgeries: 1500 },
-  { year: '2025', surgeries: 1800 },
+const stats = [
+  {
+    title: 'Total Surgeries',
+    value: 4098,
+    icon: <MdOutlineNumbers size={30} className="text-yellow-400" />,
+    color: 'bg-gradient-to-r from-yellow-500 to-yellow-300',
+  },
+  {
+    title: 'Total Hospitals',
+    value: 78,
+    icon: <FaHospital size={30} className="text-blue-400" />,
+    color: 'bg-gradient-to-r from-blue-500 to-blue-300',
+  },
+  {
+    title: 'Total Procedures',
+    value: 110,
+    icon: <FaSyringe size={30} className="text-green-400" />,
+    color: 'bg-gradient-to-r from-green-500 to-green-300',
+  },
+  {
+    title: 'Total Specialties',
+    value: 10,
+    icon: <FaStethoscope size={30} className="text-pink-400" />,
+    color: 'bg-gradient-to-r from-pink-500 to-pink-300',
+  },
 ];
 
-const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
-
-export default function SurgeryYearChart() {
+export default function StatCards() {
   return (
-    <div className="w-full bg-[#1e1e1e] p-6 rounded-xl shadow-md mt-6">
-      <h2 className="text-xl font-bold mb-4 text-white">Surgery Count by Year</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-          <XAxis dataKey="year" stroke="#bbb" />
-          <YAxis stroke="#bbb" />
-          <Tooltip
-            contentStyle={{ backgroundColor: '#333', borderColor: '#555' }}
-          />
-          <Legend wrapperStyle={{ color: 'white' }} />
-          <Bar dataKey="surgeries" fill="#8884d8" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+    <>
+      {stats.map((stat, idx) => (
+        <div
+          key={idx}
+          className={`rounded-xl shadow-lg p-5 flex items-center justify-between ${stat.color} text-black hover:scale-[1.02] transition-transform duration-200`}
+        >
+          <div>
+            <div className="text-xl font-semibold">{stat.title}</div>
+            <div className="text-3xl font-bold mt-1">{stat.value}</div>
+          </div>
+          <div>{stat.icon}</div>
+        </div>
+      ))}
+    </>
   );
 }

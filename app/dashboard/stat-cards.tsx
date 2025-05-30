@@ -7,28 +7,30 @@ const stats = [
   {
     title: 'Total Surgeries',
     value: 4098,
-    icon: <MdOutlineNumbers size={30} className="text-yellow-400" />,
-    color: 'bg-gradient-to-r from-yellow-500 to-yellow-300',
+    icon: <MdOutlineNumbers size={30} className="text-gray-700" />,
+    color: 'bg-gradient-to-r from-gray-300 via-gray-200 to-gray-100',
   },
   {
     title: 'Total Hospitals',
     value: 78,
-    icon: <FaHospital size={30} className="text-blue-400" />,
-    color: 'bg-gradient-to-r from-blue-500 to-blue-300',
+    icon: <FaHospital size={30} className="text-blue-600" />,
+    color: 'bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300',
   },
   {
     title: 'Total Procedures',
     value: 110,
-    icon: <FaSyringe size={30} className="text-green-400" />,
-    color: 'bg-gradient-to-r from-green-500 to-green-300',
+    icon: <FaSyringe size={30} className="text-teal-600" />,
+    color: 'bg-gradient-to-r from-teal-100 via-teal-200 to-teal-300',
   },
   {
     title: 'Total Specialties',
     value: 10,
-    icon: <FaStethoscope size={30} className="text-pink-400" />,
-    color: 'bg-gradient-to-r from-pink-500 to-pink-300',
+    icon: <FaStethoscope size={30} className="text-purple-600" />,
+    color: 'bg-gradient-to-r from-purple-100 via-purple-200 to-purple-300',
   },
 ];
+
+
 
 export default function StatCards() {
   return (
