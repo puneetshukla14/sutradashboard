@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation"
 import { ThemeContext } from "@/context/ThemeContext"
 
 const navLinks = [
-  { name: "Dashboard", href: "/dashboard" }, // ✅ Redirected here
+  { name: "Dashboard", href: "/dashboard" },
   { name: "Analytics", href: "/analytics" },
   { name: "Reports", href: "/reports" },
   { name: "Settings", href: "/settings" },
@@ -67,7 +67,7 @@ export default function Sidebar() {
       >
         {/* Sidebar Header */}
         <div>
-          <div className="flex items-center justify-start space-x-3 px-6 py-6 md:py-8 border-b border-gray-700 select-none">
+          <div className="flex items-center justify-start space-x-3 px-20 py-6 md:py-8 border-b border-gray-700 select-none">
             <div className="flex items-center space-x-4">
               <div className="flex-shrink-0">
                 <Image
@@ -89,6 +89,7 @@ export default function Sidebar() {
           <nav className="flex flex-col mt-6 space-y-1 px-4 md:px-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
+
               return (
                 <Link
                   key={link.href}
@@ -113,7 +114,7 @@ export default function Sidebar() {
           {/* Profile Info */}
           <div className="flex items-center space-x-3 w-full">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold select-none text-lg">
-              P
+              W {/* 👈 This was changed from P to W */}
             </div>
             <div>
               <p className="text-xs md:text-sm font-semibold text-white leading-tight">Puneet</p>
@@ -122,32 +123,30 @@ export default function Sidebar() {
           </div>
 
           {/* Theme Toggle */}
-{/* Theme Toggle */}
-<div className="w-full flex items-center justify-between">
-  <span className="text-xs md:text-sm text-gray-400 select-none">
-    Dark Mode
-  </span>
+          <div className="w-full flex items-center justify-between">
+            <span className="text-xs md:text-sm text-gray-400 select-none">Dark Mode</span>
 
-  <button
-    onClick={toggleTheme}
-    className={`relative w-14 h-7 rounded-full flex items-center px-1 transition-colors duration-300 cursor-pointer
-      ${theme === "dark"
-        ? "bg-gradient-to-r from-green-400 to-emerald-500 shadow-[0_0_6px_2px_rgba(34,197,94,0.5)] justify-end"
-        : "bg-gray-400 justify-start"}`}
-    aria-label="Toggle Dark Mode"
-    role="switch"
-    aria-checked={theme === "dark"}
-  
-  >
-    <span
-      className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300`}
-      style={{
-        boxShadow: theme === "dark" ? "0 0 10px rgba(255,255,255,0.5)" : "0 1px 3px rgba(0,0,0,0.2)",
-      }}
-    />
-  </button>
-</div>
-
+            <button
+              onClick={toggleTheme}
+              className={`relative w-14 h-7 rounded-full flex items-center px-1 transition-colors duration-300 cursor-pointer
+                ${theme === "dark"
+                  ? "bg-gradient-to-r from-green-400 to-emerald-500 shadow-[0_0_6px_2px_rgba(34,197,94,0.5)] justify-end"
+                  : "bg-gray-400 justify-start"}`}
+              aria-label="Toggle Dark Mode"
+              role="switch"
+              aria-checked={theme === "dark"}
+            >
+              <span
+                className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300`}
+                style={{
+                  boxShadow:
+                    theme === "dark"
+                      ? "0 0 10px rgba(255,255,255,0.5)"
+                      : "0 1px 3px rgba(0,0,0,0.2)",
+                }}
+              />
+            </button>
+          </div>
 
           {/* Copyright */}
           <p className="text-xs text-gray-500 select-none mt-1">&copy; {year} SS Innovations</p>
